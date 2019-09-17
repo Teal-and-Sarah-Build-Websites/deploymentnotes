@@ -49,6 +49,7 @@ group = sitename
 
 6. Edit the sites-available file to point the dns to the site
 
+```
 server {
     #listen 80;
     index index.html index.php;
@@ -57,7 +58,7 @@ server {
     root /home/sitename/www/html;
     server_name sitednsname.com;
     ## End - Server Info
-...
+
 ```
 
 7. Login to the domain name company and add the IP address to the A record.
