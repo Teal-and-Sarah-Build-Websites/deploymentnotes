@@ -51,6 +51,7 @@ server {
 6. Restart ngnix and php using sudo command.
 `sudo systemctl restart nginx` 
 `sudo systemctl restart php7.2-fpm`
+`sudo nginx -t`
 
 7. Edit the sites-available file to point the dns to the site
 ```
