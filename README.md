@@ -6,10 +6,11 @@ https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubunt
 
 - In order to name the server, had to add the server name to local file `/etc/hosts`
 
-- Another way is to add it to `./ssh/confi` but the above is probably enough
+- Another way is to add this to `./ssh/confi` but the above is probably enough:
         ```Host duckalope
             HostName 159.65.251.230
-            User teal```
+            User teal
+        ```
 - On the server, you have to allow 80 and 443 through the firewall:
     `ufw allow 80`
     `ufw allow 443`
@@ -19,7 +20,7 @@ https://learn.getgrav.org/16/webservers-hosting/vps/digitalocean
 
 - In the above instructions, change "grav" to the site name. So the config file is `sitename.conf`, the user is `sitename`, sites-enabled is `sitename` and each site is in its own user's home directory called `sitename`.
 
-1. In /etc/php/7.2/fpm/pool.d create `sitename.conf`
+1. In `/etc/php/7.2/fpm/pool.d` create `sitename.conf`
 ```
 [sitename]
 
@@ -30,7 +31,7 @@ group = sitename
 
 2. `adduser sitename`
 
-3. In /etc/nginx/sites-available/# create `sitename`
+3. In `/etc/nginx/sites-available/` create `sitename`
 
 ```
 server {
