@@ -46,7 +46,7 @@ server {
 4. In both of the above files, where is says `listen = fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;` change it to `listen = 127.0.0.1:900X` where 900X ends in a unique port number for that site.
 
 5. move to `sites-enabled` and create simlink:
-```ln -s ../sites-available/sitename```
+```sudo ln -s ../sites-available/sitename```
 
 6. Restart ngnix and php using sudo command.
 `sudo systemctl restart nginx` 
