@@ -43,14 +43,16 @@ server {
     server_name localhost;
     ## End - Server Info
 ```
-
 4. In both of the above files, where is says `listen = fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;` change it to `listen = 127.0.0.1:900X` where 900X ends in a unique port number for that site.
 
-5. Restart ngnix and php using sudo command.
+5. move to `sites-enabled` and create simlink:
+```ln -s ../sites-available/sitename```
+
+6. Restart ngnix and php using sudo command.
 `sudo systemctl restart nginx` 
 `sudo systemctl restart php7.2-fpm`
 
-6. Edit the sites-available file to point the dns to the site
+7. Edit the sites-available file to point the dns to the site
 ```
 server {
     #listen 80;
@@ -63,6 +65,6 @@ server {
 
 ```
 
-7. Login to the domain name company and add the IP address to the A record.
-8. Check on https://dnschecker.org that its been moved over. 
-9. Using certbot (https: https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx.html) run `sudo certbot --nginx` to add certificate to new site.
+8. Login to the domain name company and add the IP address to the A record.
+9. Check on https://dnschecker.org that its been moved over. 
+10. Using certbot (https: https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx.html) run `sudo certbot --nginx` to add certificate to new site.
