@@ -40,7 +40,6 @@ group = sitename
     root /home/sitename/www/html;
     server_name localhost;
     ## End - Server Info
-...
 ```
 
 4. In both of the above files, where is says `listen = fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;` change it to `listen = 127.0.0.1:9000` where 900x ends in a unique port number for that site.
